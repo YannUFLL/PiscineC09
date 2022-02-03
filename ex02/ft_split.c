@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 18:13:26 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/02/03 16:29:08 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/02/03 17:47:19 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 // fuction which detects if the char match with the charset
 _Bool	ft_match(char str, char *to_find)
 {
-	int unsigned	i;
+	int	i;
 
 	i = 0;
 	while (to_find[i])
@@ -72,7 +72,7 @@ void	ft_advance(int *i, char *str, char *charset)
 
 void	ft_strlcpy(char *src, char **tab, char *str, int r)
 {
-	int unsigned	i;
+	int				i;
 	char			*string;
 	int				size;
 	char			*ptr;
@@ -126,15 +126,16 @@ char	**ft_split(char *str, char *charset)
 	return (tab);
 }
 /*
+#include <stdio.h>
 int	main()
 {
-	char chaine[] = "";
+	char chaine[] = "a12b12c";
 	char occurence[] = "12";
 	char **tab; 
 	tab = ft_split(chaine,occurence);
     printf("\ntab 0 : %s", tab[0]);
 	printf("\ntab 1 : %s", tab[1]);
 	printf("\ntab 2 : %s", tab[2]);
-	printf("\ntab 3 : %s", tab[1000000000]);
+	printf("\ntab 3 : %s", tab[3]);
 }
 */
