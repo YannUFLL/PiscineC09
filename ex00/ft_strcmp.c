@@ -6,34 +6,23 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 12:31:35 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/01/20 17:19:18 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/02/03 18:44:47 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
-	int	c;
-	int	a;
-	int	b;
 
 	i = 0;
-	c = 0;
-	while (s1[i] || s2[i])
+	while (s1[i] != '\0' || s2[i] != '\0')
 	{
-		a = s1[i];
-		b = s2[i];
-		if (s1[i] < 0)
-		a = 128 - s1[i];
-		if (s2[i] < 0)
-		b = 128 - s1[i];
-		if (a > b)
-			c = 1;
-		else if (a < b)
-			c = -1;
-		if (c != 0)
-			break ;
-	i++;
+		if (s1[i] < s2[i] || s1[i] > s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
+		else
+			i++;
 	}
-	return (c);
+	return (0);
 }
